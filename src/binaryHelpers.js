@@ -18,7 +18,7 @@ export function readString(binary, start, stop) {
 export function writeString(binary, value, start, stop) {
     for (let i = start; i < stop; i++) {
         if (i - start < value.length) {
-            binary[i] = value.charCodeAt(i) & 127; // Only want the 8 ascii bits
+            binary[i] = value.charCodeAt(i - start) & 127; // Only want the 8 ascii bits
         } else {
             binary[i] = 0x0;
         }

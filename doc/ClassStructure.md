@@ -63,6 +63,6 @@ ArtAsset:
 - width: width in chunks
 - height: height in chunks
 
-BinarySourceInterface:
-- validate()
-- buffer
+## Other functions
+
+- readBinary(binary, )

@@ -2,7 +2,7 @@
  * Contains the mio file, is generic
  */
 
-import { readInt, readString, writeInt, writeString } from "./binaryHelpers";
+import { readInt, readString, writeInt, writeString } from "./binaryHelpers.js";
 
 export default class MioContainer {
     constructor({binary, index}) {
