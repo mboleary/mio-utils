@@ -1,0 +1,20 @@
+{
+  "name": "mio-utils",
+  "version": "1.0.0",
+  "description": "This repo contains an api for editing Warioware DIY / Made In Ore microgames in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mboleary/mio-utils.git"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mboleary/mio-utils/issues"
+  },
+  "homepage": "https://github.com/mboleary/mio-utils#readme"
+}
