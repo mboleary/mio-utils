@@ -4,7 +4,7 @@
 
 export default Object.freeze({
     YELLOW: 0,
-    LIGHT_BLUW: 1,
+    LIGHT_BLUE: 1,
     GREEN: 2,
     ORANGE: 3,
     DARK_BLUE: 4,

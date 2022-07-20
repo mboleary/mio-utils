@@ -47,21 +47,31 @@ MioRecord:
 - tempo
 - swing
 - flag: position of where the music stopping point is
-- record_type
-- record_color
+- recordType
+- recordColor
 - logo
-- logo_color
+- logoColor
 - blocks[]: music blocks in the record
 
 MioManga:
 - color
 - logo
-- logo_color
+- logoColor
 - art[]: provides 4 comic book pages of art to be used
 
 ArtAsset:
 - width: width in chunks
 - height: height in chunks
+
+MusicBlock:
+- tracks[]
+
+MusicTrack:
+- number: number 0-4 inclusive, where 4 is the rhythm track
+- instrument
+- volume
+- panning
+- notes[]
 
 ## Other functions
 
