@@ -1,5 +1,5 @@
 {
-  "name": "mio-utils",
+  "name": "libmio",
   "version": "1.0.0",
   "description": "This repo contains an api for editing Warioware DIY / Made In Ore microgames in JavaScript.",
   "main": "index.js",
