@@ -4,8 +4,8 @@
 
 export default Object.freeze([
     [0, 0, 0, 0], // transparent
-    [0, 0, 0, 1], // black
-    [255, 223, 156, 1], // light tan
+    [0, 0, 0], // black
+    [255, 223, 156], // light tan
     [255, 174, 49], // dark tan
     [198, 73, 0], // brown
     [255, 0, 0], // red
