@@ -23,29 +23,35 @@ function generateBitmapBlocksFromPalette(binary, palette, sx, sy) {
 
     const bx = Math.floor(sx / 8);
 
+    // @TODO remove this
+    const offset = 0x100;
+    // const offset = 0;
+
     let x = 0, y = 0, v = 0, w = 0, b = 0; // inner position (x, y), outer block position (v, w), b = block index
-    for (let i = 0x100; i < binary.length && i < 0x100 + 64; i++) {
+    // Note: each block is 32 bytes long
+    for (let i = offset; i < binary.length && i < offset + 1024; i++) {
         // image data is UInt8 array of sx * sy * 4 (r, g, b, a)
         // WWDIY data is a 4-bit palette
 
         // calculate inner coordinates
-        x = i % 4;
+        x = (i - offset) % 4;
         y = Math.floor((i % 32) / 4);
+        // y = Math.floor((i - offset) / 4);
 
-        b = Math.floor(i / 32);
+        b = Math.floor((i - offset) / 32);
 
         // calculate outer (block) coordinates
-        // v=b;
+        v=b;
         // v = b % bx;
         // w = Math.floor(v / bx);
 
         
         // const start = ((x + (y * 8 * 8)) + ((v * 8 * 8 * 8) + w * bx * 8)) * 8;
-        const start = (x + (y * sx)) * 8;
+        const start = (((x * 2) + (y * sx)) + ((v * 8) + (w * bx * sx))) * 4;
         const low = binary[i] & 15;
         const high = (binary[i] & 240) >> 4;
 
-        console.log('[index, x, y, b, start, low, high]:', i, x, y, b, start, low, high);
+        // console.log('[index, x, y, b, start, low, high]:', i, x, y, b, start, low, high);
         // Draw low bits
         const arrLow = palette[low];
         if (arrLow) {
@@ -135,7 +141,7 @@ async function loadMioFile(event) {
         const arr = await event.target.files[0].arrayBuffer();
         const uint8arr = new Uint8Array(arr);
         console.log(uint8arr);
-        const img = generateBitmapFromPalette(uint8arr, PaletteEnum, 256, 256);
+        const img = generateBitmapBlocksFromPalette(uint8arr, PaletteEnum, 256, 256);
         context.putImageData(img, 0, 0);
         context.scale(4, 4);
     }
