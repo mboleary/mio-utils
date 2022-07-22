@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": ""
+    "build": "webpack build"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "workbox-webpack-plugin": "^6.5.3"
   },
   "dependencies": {
-    "libmio": "file:../../package/libmio"
+    "libmio": "file:../../package/libmio",
+    "libmio-frontend": "file:../../package/libmio-frontend"
   }
 }
