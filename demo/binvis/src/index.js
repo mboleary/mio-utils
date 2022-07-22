@@ -24,12 +24,13 @@ function generateBitmapBlocksFromPalette(binary, palette, sx, sy) {
     const bx = Math.floor(sx / 8);
 
     // @TODO remove this
-    const offset = 0x100;
-    // const offset = 0;
+    // const offset = 0x100;
+    const offset = 0;
 
     let x = 0, y = 0, v = 0, w = 0, b = 0; // inner position (x, y), outer block position (v, w), b = block index
     // Note: each block is 32 bytes long
-    for (let i = offset; i < binary.length && i < offset + 1024; i++) {
+    //  && i < offset + 1024 + 32
+    for (let i = offset; i < binary.length; i++) {
         // image data is UInt8 array of sx * sy * 4 (r, g, b, a)
         // WWDIY data is a 4-bit palette
 
@@ -41,13 +42,15 @@ function generateBitmapBlocksFromPalette(binary, palette, sx, sy) {
         b = Math.floor((i - offset) / 32);
 
         // calculate outer (block) coordinates
-        v=b;
-        // v = b % bx;
-        // w = Math.floor(v / bx);
+        // v=b;
+        v = b % bx;
+        w = Math.floor(b / bx);
 
         
         // const start = ((x + (y * 8 * 8)) + ((v * 8 * 8 * 8) + w * bx * 8)) * 8;
-        const start = (((x * 2) + (y * sx)) + ((v * 8) + (w * bx * sx))) * 4;
+        const innerIndex = (x * 2) + (y * sx);
+        const outerIndex = ((v * 8) + (w * bx * 8 * 8));
+        const start = (innerIndex + outerIndex) * 4;
         const low = binary[i] & 15;
         const high = (binary[i] & 240) >> 4;
 
