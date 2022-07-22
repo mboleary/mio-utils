@@ -23,38 +23,28 @@ function generateBitmapBlocksFromPalette(binary, palette, sx, sy) {
 
     const bx = Math.floor(sx / 8);
 
-    // @TODO remove this
-    // const offset = 0x100;
-    const offset = 0;
-
     let x = 0, y = 0, v = 0, w = 0, b = 0; // inner position (x, y), outer block position (v, w), b = block index
     // Note: each block is 32 bytes long
-    //  && i < offset + 1024 + 32
-    for (let i = offset; i < binary.length; i++) {
+    for (let i = 0; i < binary.length; i++) {
         // image data is UInt8 array of sx * sy * 4 (r, g, b, a)
         // WWDIY data is a 4-bit palette
 
         // calculate inner coordinates
-        x = (i - offset) % 4;
+        x = (i) % 4;
         y = Math.floor((i % 32) / 4);
-        // y = Math.floor((i - offset) / 4);
 
-        b = Math.floor((i - offset) / 32);
+        b = Math.floor((i) / 32);
 
         // calculate outer (block) coordinates
-        // v=b;
         v = b % bx;
         w = Math.floor(b / bx);
 
-        
-        // const start = ((x + (y * 8 * 8)) + ((v * 8 * 8 * 8) + w * bx * 8)) * 8;
         const innerIndex = (x * 2) + (y * sx);
         const outerIndex = ((v * 8) + (w * bx * 8 * 8));
         const start = (innerIndex + outerIndex) * 4;
         const low = binary[i] & 15;
         const high = (binary[i] & 240) >> 4;
 
-        // console.log('[index, x, y, b, start, low, high]:', i, x, y, b, start, low, high);
         // Draw low bits
         const arrLow = palette[low];
         if (arrLow) {
