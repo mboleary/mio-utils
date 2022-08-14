@@ -3,7 +3,7 @@
  */
 
 import { PaletteEnum } from "libmio";
-import {generateBitmapBlocksFromPalette} from "libmio-frontend";
+import {generateBitmapBlocksFromPalette, scaleImageDataByInteger} from "libmio-frontend";
 
 const fileInput = document.getElementById('file_input');
 const canvas = document.getElementById('canvas');
@@ -15,7 +15,8 @@ async function loadMioFile(event) {
         const arr = await event.target.files[0].arrayBuffer();
         const uint8arr = new Uint8Array(arr);
         console.log(uint8arr);
-        const img = generateBitmapBlocksFromPalette(uint8arr, PaletteEnum, 256, 256);
+        let img = generateBitmapBlocksFromPalette(uint8arr, PaletteEnum, 256, 256);
+        img = scaleImageDataByInteger(img, 4);
         context.putImageData(img, 0, 0);
         context.scale(4, 4);
     }
