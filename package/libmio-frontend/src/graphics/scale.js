@@ -2,7 +2,7 @@
  * Contains functions to help with scaling imageData
  */
 
-export const DEFAULT_GRID_COLOR = [0, 255, 0, 0];
+export const DEFAULT_GRID_COLOR = [0, 255, 0, 255];
 
 export function scaleImageDataByInteger(imageData, scale, {enableGrid = false, gridColor = DEFAULT_GRID_COLOR, gridFactor = 1} = {}) {
     const width = Math.floor(imageData.width * scale);

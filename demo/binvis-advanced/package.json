@@ -1,0 +1,22 @@
+{
+  "name": "binvis-mio-demo",
+  "version": "1.0.0",
+  "description": "This demo will render the contents of the mio file as a binary map, much like how [binvis.io](binvis.io) does this.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "workbox-webpack-plugin": "^6.5.3"
+  },
+  "dependencies": {
+    "libmio": "file:../../package/libmio",
+    "libmio-frontend": "file:../../package/libmio-frontend"
+  }
+}
