@@ -2,7 +2,9 @@
  * Contains functions to help with scaling imageData
  */
 
-export function scaleImageDataByInteger(imageData, scale) {
+export const DEFAULT_GRID_COLOR = [0, 255, 0, 0];
+
+export function scaleImageDataByInteger(imageData, scale, {enableGrid = false, gridColor = DEFAULT_GRID_COLOR, gridFactor = 1} = {}) {
     const width = Math.floor(imageData.width * scale);
     const height = Math.floor(imageData.height * scale);
     const scaledImageData = new ImageData(width, height);
@@ -19,10 +21,17 @@ export function scaleImageDataByInteger(imageData, scale) {
         const origRow = Math.floor(row / scale);
         const origCol = Math.floor(col / scale);
 
-        scaledImageData.data[i * 4] = imageData.data[((origRow * origWidth) + origCol) * 4];
-        scaledImageData.data[i * 4 + 1] = imageData.data[(((origRow * origWidth) + origCol) * 4) + 1];
-        scaledImageData.data[i * 4 + 2] = imageData.data[(((origRow * origWidth) + origCol) * 4) + 2];
-        scaledImageData.data[i * 4 + 3] = imageData.data[(((origRow * origWidth) + origCol) * 4) + 3];
+        if (enableGrid && gridColor?.length && ((row % scale === 0 && origRow % gridFactor === 0) || (col % scale === 0 && origCol % gridFactor === 0))) {
+            scaledImageData.data[i * 4] = gridColor[0];
+            scaledImageData.data[i * 4 + 1] = gridColor[1];
+            scaledImageData.data[i * 4 + 2] = gridColor[2];
+            scaledImageData.data[i * 4 + 3] = gridColor[3];
+        } else {
+            scaledImageData.data[i * 4] = imageData.data[((origRow * origWidth) + origCol) * 4];
+            scaledImageData.data[i * 4 + 1] = imageData.data[(((origRow * origWidth) + origCol) * 4) + 1];
+            scaledImageData.data[i * 4 + 2] = imageData.data[(((origRow * origWidth) + origCol) * 4) + 2];
+            scaledImageData.data[i * 4 + 3] = imageData.data[(((origRow * origWidth) + origCol) * 4) + 3];
+        }
     }
 
     return scaledImageData;
