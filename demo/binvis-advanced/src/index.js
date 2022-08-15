@@ -21,6 +21,8 @@ const context = canvas.getContext('2d');
 
 let wholeFileBinary = null;
 let canvasScale = 1;
+let activeTableCellIndex = -1;
+let activeTableCellType = "";
 
 function initializeCanvas(width, height) {
     canvas.setAttribute('width', width);
@@ -46,6 +48,7 @@ async function loadMioFile(event) {
         wholeFileBinary = uint8arr;
         console.log(wholeFileBinary);
         readMioIntoCanvas(uint8arr);
+        setTableValues(uint8arr.slice(0, 32), 4, 0, 32);
     }
 }
 
@@ -83,7 +86,7 @@ function setTableValues(mioPart, cols = 4, start, end) {
 
     // Set Title
     const title = document.createElement('caption');
-    title.textContent = `Hex data from 0x${start.toString(16)} to 0x${end.toString(16)}: size ${mioPart.length} bytes`;
+    title.textContent = `Hex data from 0x${start.toString(16)} (${start}) to 0x${end.toString(16)} (${end}): size ${mioPart.length} bytes`;
 
     frag.appendChild(title);
 
@@ -93,7 +96,6 @@ function setTableValues(mioPart, cols = 4, start, end) {
     let currRow = document.createElement('tr');
     for (let i = 0; i < mioPart.length; i++) {
         if (i % cols === 0 && hexFrag.childElementCount > 0) {
-            console.log("test", hexFrag, asciiFrag);
             currRow.appendChild(hexFrag);
             currRow.appendChild(asciiFrag);
             frag.appendChild(currRow);
@@ -117,11 +119,38 @@ function setTableValues(mioPart, cols = 4, start, end) {
     blockTable.appendChild(frag);
 }
 
+function handleTableHover(event) {
+    console.log("target", event.target);
+    const type = event.target.getAttribute('data_type');
+    const index = parseInt(event.target.getAttribute('index'));
+    if (event.type === 'mouseleave') {
+        activeTableCellIndex = -1;
+        const arr = blockTable.querySelectorAll('td.selected');
+        for (const el of arr) {
+            el.classList.remove('selected')
+        }
+    } else if (type) {
+        const oldEl = blockTable.querySelector(`td[index="${activeTableCellIndex}"][data_type="${activeTableCellType === "hex" ? "ascii" : "hex"}"]`);
+        activeTableCellIndex = index;
+        activeTableCellType = type;
+        const el = blockTable.querySelector(`td[index="${index}"][data_type="${type === "hex" ? "ascii" : "hex"}"]`);
+        if (el) {
+            el.classList.add('selected');
+        }
+        if (oldEl) {
+            oldEl.classList.remove('selected');
+        }
+    }
+}
+
 function handleCanvasClick(event) {
     const col = Math.floor(event.offsetX / canvasScale / 8);
     const row = Math.floor(event.offsetY / canvasScale / 8);
+
+    const numCols = Math.floor(Number(bitmapWidthInput.value) / 8);
+    const begin = Number(binStartInput.value);
     
-    const offset = (col * 32);
+    const offset = (col * 32) + (row * 32 * numCols) + begin;
     
     console.log("click", event.offsetX, event.offsetY, col, row, offset);
 
@@ -135,6 +164,8 @@ function main() {
     fileInput.addEventListener('change', loadMioFile);
     refreshCanvasButton.addEventListener('click', refreshCanvas);
     canvas.addEventListener('click', handleCanvasClick);
+    blockTable.addEventListener('mouseover', handleTableHover);
+    blockTable.addEventListener('mouseleave', handleTableHover);
 }
 
 main();

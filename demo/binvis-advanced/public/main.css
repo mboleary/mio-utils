@@ -918,11 +918,11 @@ body[dark] .content-card, body[dark] .content-square {
   margin: 0;
 }
 
-form:not(.no-margin) {
+.form:not(.no-margin), form:not(.no-margin) {
   margin: 10px 0;
 }
 
-form .body {
+.form .body, form .body {
   border-left: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
   border-right: 1px solid #aaa;
@@ -930,11 +930,11 @@ form .body {
   padding: 10px;
 }
 @media only screen and (prefers-color-scheme: dark) {
-  form .body {
+  .form .body, form .body {
     border-color: #333;
   }
 }
-body[dark] form .body {
+body[dark] .form .body, .form body[dark] .body, body[dark] form .body, form body[dark] .body {
   border-color: #333;
 }
 

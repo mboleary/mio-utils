@@ -27,7 +27,7 @@ const config = {
 
     new CopyPlugin({
       patterns: [
-        { from: "./public/*.css", to: "./" },
+        { from: "./public/main.css", to: "./main.css" },
         { from: "./public/font", to: "./font" },
         { from: "./public/favicon.png", to: "./favicon.png" },
       ],

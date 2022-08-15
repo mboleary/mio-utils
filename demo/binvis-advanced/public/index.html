@@ -18,6 +18,17 @@
             }
         }
     </script>
+    <style>
+        #block_table td[index]:hover {
+            background-color: #2682A6CC;
+            color: #fff;
+        }
+
+        #block_table td.selected {
+            background-color: #2682A633;
+            color: #fff;
+        }
+    </style>
 </head>
 <body dark>
     <div class="title-banner bg-gradient-a1-a2 fg-dark-color">
@@ -29,58 +40,54 @@
         </div>
     </div>
     <div class="container">
-        <h2>Rendering Options</h2>
-        <div>
-            <label>
-                Start Byte:
-                <input type="number" value="0" min="0" id="bin_start">
-            </label>
-            <small>A block is 32 bytes long</small>
-        </div>
-        <div>
-            <label>
-                Range:
-                <input type="number" value="-1" min="-1" id="bin_range">
-            </label>
-            <small>Using a value of -1 will show as much of the file as possible</small>
-        </div>
-        <div>
-            <label>
-                Scale:
-                <input type="number" value="4" id="scale">
-            </label>
-        </div>
+        <h2 class="accent-2 hbar">Warioware D.I.Y. Save File Demo</h2>
+        <p>This is a demonstration application that can be used to view the contents of a warioware DIY / Made In Ore microgame. While the underlying library, <a href="#">mio-utils</a> supports viewing and editing the metadata of the microgames, the primary purpose of this demo is to display the graphics stored within the game save file</p>
 
-        <div>
-            <label>
-                Canvas Width:
-                <input type="number" value="1024" id="canvas_width">
-            </label>
+        <div class="form">
+            <div class="app-bar flex-layout horizontal">
+                <div class="flex-layout vertical center">
+                    <h2> Rendering Options </h2>
+                </div>
+            </div>
+            <div class="body">
+                <fieldset class="flex-layout vertical">
+                    <label> Start Byte: </label>
+                    <input type="number" value="0" min="0" id="bin_start">
+                    <p><small>A block is 32 bytes long</small></p>
+                </fieldset>
+                <fieldset class="flex-layout vertical">
+                    <label> Range: </label>
+                    <input type="number" value="-1" min="-1" id="bin_range">
+                    <p><small>Using a value of -1 will show as much of the file as possible</small></p>
+                </fieldset>
+                <fieldset class="flex-layout vertical">
+                    <label> Scale: </label>
+                    <input type="number" value="4" id="scale">
+                </fieldset>
+        
+                <fieldset class="flex-layout vertical">
+                    <label> Canvas Width: </label>
+                    <input type="number" value="1024" id="canvas_width">
+                </fieldset>
+                <fieldset class="flex-layout vertical">
+                    <label> Canvas Height: </label>
+                    <input type="number" value="1024" id="canvas_height">
+                </fieldset>
+                <fieldset class="flex-layout vertical">
+                    <label> Bitmap Width: </label>
+                    <input type="number" value="256" id="bitmap_width">
+                </fieldset>
+                <fieldset class="flex-layout vertical">
+                    <label> Bitmap Height: </label>
+                    <input type="number" value="256" id="bitmap_height">
+                </fieldset>
+                <fieldset class="flex-layout vertical">
+                    <label> <input type="checkbox" checked="true" id="enable_grid">Enable Grid </label>
+                </fieldset>
+                <hr>
+                <button type="button" id="refresh_canvas">Refresh Canvas</button>
+            </div>
         </div>
-        <div>
-            <label>
-                Canvas Height:
-                <input type="number" value="1024" id="canvas_height">
-            </label>
-        </div>
-        <div>
-            <label>
-                Bitmap Width:
-                <input type="number" value="256" id="bitmap_width">
-            </label>
-        </div>
-        <div>
-            <label>
-                Bitmap Height:
-                <input type="number" value="256" id="bitmap_height">
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" checked="true" id="enable_grid">Enable Grid
-            </label>
-        </div>
-        <button type="button" id="refresh_canvas">Refresh Canvas</button>
     </div>
     <div class="container">
         <canvas id="canvas" width="1024" height="1024"></canvas>
