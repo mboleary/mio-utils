@@ -16,7 +16,7 @@ This is the core library that can read / write binary save files, and the indivi
 
 ## Demos
 
-In order to show things working, I've included a few of my microgames and a record in the `./assets/mio` directory. Alternatively, you can also acquire some `.mio` files from [The DoujinSoft Store](https://diy.tvc-16.science/), ([https://github.com/Difegue/DoujinSoft](https://github.com/Difegue/DoujinSoft)), though I've seen a few that end up being files filled with `0x00`.
+In order to show things working, I've included a few of my microgames and a record in the `./asset/mio` directory. Alternatively, you can also acquire some `.mio` files from [The DoujinSoft Store](https://diy.tvc-16.science/), ([https://github.com/Difegue/DoujinSoft](https://github.com/Difegue/DoujinSoft)), though I've seen a few that end up being files filled with `0x00`.
 
 ### [temp](https://github.com/mboleary/mio-utils/tree/main/demo/temp)
 
