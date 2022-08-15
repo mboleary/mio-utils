@@ -3,6 +3,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 // const publicPath = process.env.PUBLIC_PATH || "/public/";
@@ -22,6 +23,14 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+
+    new CopyPlugin({
+      patterns: [
+        { from: "./public/*.css", to: "./" },
+        { from: "./public/font", to: "./font" },
+        { from: "./public/favicon.png", to: "./favicon.png" },
+      ],
     }),
 
     // Add your plugins here

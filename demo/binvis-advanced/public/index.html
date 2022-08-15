@@ -1,14 +1,35 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>Binary Vis Demo for mio-utils</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00121a"> <!-- Colored Chrome Mobile Tabs! -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Mio Utils</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script>
+        function toggleDark() {
+            const elem = document.body;
+            let state = elem.getAttribute("dark");
+            if (state === null) {
+                elem.setAttribute("dark", "");
+            } else {
+                elem.removeAttribute("dark");
+            }
+        }
+    </script>
 </head>
-
-<body>
-    <h1>Binary Vis Demo</h1>
-    <div>
-        <input type="file" id="file_input">
-        <hr>
+<body dark>
+    <div class="title-banner bg-gradient-a1-a2 fg-dark-color">
+        <div class="container text-center">
+            <h1>Binary Vis Demo</h1>
+            <hr>
+            <p>A demo of Mio-utils</p>
+            <input type="file" id="file_input">
+        </div>
+    </div>
+    <div class="container">
+        <h2>Rendering Options</h2>
         <div>
             <label>
                 Start Byte:
@@ -61,7 +82,18 @@
         </div>
         <button type="button" id="refresh_canvas">Refresh Canvas</button>
     </div>
-    <canvas id="canvas" width="1024" height="1024"></canvas>
+    <div class="container">
+        <canvas id="canvas" width="1024" height="1024"></canvas>
+    </div>
+    <hr>
+    <div class="container">
+        <table id="block_table"></table>
+    </div>
+    <div class="container">
+        <hr>
+        <button onclick="toggleDark()">Toggle Dark mode</button>
+    </div>
+    <div class="height-20"></div>
 </body>
 
 </html>

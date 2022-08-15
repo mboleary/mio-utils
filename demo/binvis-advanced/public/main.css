@@ -1,0 +1,2649 @@
+@charset "UTF-8";
+.accent-1 {
+  color: #BBE524;
+}
+
+.bg-accent-1 {
+  background-color: #BBE524;
+}
+
+.accent-2 {
+  color: #2682A6;
+}
+
+.bg-accent-2 {
+  background-color: #2682A6;
+}
+
+.accent-3 {
+  color: #FF230F;
+}
+
+.bg-accent-3 {
+  background-color: #FF230F;
+}
+
+.accent-4 {
+  color: #FB9902;
+}
+
+.bg-accent-4 {
+  background-color: #FB9902;
+}
+
+.bg-color {
+  background-color: white;
+  color: black;
+}
+
+.fg-color {
+  color: black;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+.backdrop-small {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px white;
+}
+
+hr {
+  border-color: black;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: white;
+  }
+
+  .bg-color {
+    background-color: #111;
+    color: white;
+  }
+
+  .fg-color {
+    color: white;
+  }
+
+  .backdrop-small {
+    background-color: rgba(17, 17, 17, 0.5);
+    box-shadow: 0 0 10px #111;
+  }
+
+  hr {
+    border-color: white;
+  }
+}
+body[dark] {
+  background-color: #111;
+  color: white;
+}
+body[dark] .bg-color {
+  background-color: #111;
+  color: white;
+}
+body[dark] .fg-color {
+  color: white;
+}
+body[dark] .backdrop-small {
+  background-color: rgba(17, 17, 17, 0.5);
+  box-shadow: 0 0 10px #111;
+}
+body[dark] hr {
+  border-color: white;
+}
+
+.fg-light-color {
+  color: black;
+}
+.fg-light-color hr {
+  border-color: black;
+}
+
+.fg-dark-color {
+  color: white;
+}
+.fg-dark-color hr {
+  border-color: white;
+}
+
+.bg-light-color {
+  background-color: white;
+}
+
+.bg-dark-color {
+  background-color: #111;
+}
+
+.error-color-fg {
+  color: #FF230F;
+}
+
+.error-color-bg {
+  background-color: #FF230F;
+}
+
+.warn-color-fg {
+  color: #FFC30F;
+}
+
+.warn-color-bg {
+  background-color: #FFC30F;
+}
+
+.bg-gradient-a1 {
+  background: linear-gradient(103deg, #637b0f 0%, #BBE524 100%);
+}
+
+.fg-gradient-a1 {
+  background: linear-gradient(103deg, #637b0f 0%, #BBE524 100%);
+  border-image: linear-gradient(103deg, #637b0f 0%, #BBE524 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a1-a2 {
+  background: linear-gradient(45deg, #BBE524 0%, #2682A6 100%);
+}
+
+.fg-gradient-a1-a2 {
+  background: linear-gradient(45deg, #BBE524 0%, #2682A6 100%);
+  border-image: linear-gradient(45deg, #BBE524 0%, #2682A6 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a1-a3 {
+  background: linear-gradient(45deg, #BBE524 0%, #FF230F 100%);
+}
+
+.fg-gradient-a1-a3 {
+  background: linear-gradient(45deg, #BBE524 0%, #FF230F 100%);
+  border-image: linear-gradient(45deg, #BBE524 0%, #FF230F 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a1-a4 {
+  background: linear-gradient(45deg, #BBE524 0%, #FB9902 100%);
+}
+
+.fg-gradient-a1-a4 {
+  background: linear-gradient(45deg, #BBE524 0%, #FB9902 100%);
+  border-image: linear-gradient(45deg, #BBE524 0%, #FB9902 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a2 {
+  background: linear-gradient(103deg, #0e313e 0%, #2682A6 100%);
+}
+
+.fg-gradient-a2 {
+  background: linear-gradient(103deg, #0e313e 0%, #2682A6 100%);
+  border-image: linear-gradient(103deg, #0e313e 0%, #2682A6 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a2-a1 {
+  background: linear-gradient(45deg, #2682A6 0%, #BBE524 100%);
+}
+
+.fg-gradient-a2-a1 {
+  background: linear-gradient(45deg, #2682A6 0%, #BBE524 100%);
+  border-image: linear-gradient(45deg, #2682A6 0%, #BBE524 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a2-a3 {
+  background: linear-gradient(45deg, #2682A6 0%, #FF230F 100%);
+}
+
+.fg-gradient-a2-a3 {
+  background: linear-gradient(45deg, #2682A6 0%, #FF230F 100%);
+  border-image: linear-gradient(45deg, #2682A6 0%, #FF230F 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a2-a4 {
+  background: linear-gradient(45deg, #2682A6 0%, #FB9902 100%);
+}
+
+.fg-gradient-a2-a4 {
+  background: linear-gradient(45deg, #2682A6 0%, #FB9902 100%);
+  border-image: linear-gradient(45deg, #2682A6 0%, #FB9902 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a3 {
+  background: linear-gradient(103deg, #8f0c00 0%, #FF230F 100%);
+}
+
+.fg-gradient-a3 {
+  background: linear-gradient(103deg, #8f0c00 0%, #FF230F 100%);
+  border-image: linear-gradient(103deg, #8f0c00 0%, #FF230F 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a3-a1 {
+  background: linear-gradient(45deg, #FF230F 0%, #BBE524 100%);
+}
+
+.fg-gradient-a3-a1 {
+  background: linear-gradient(45deg, #FF230F 0%, #BBE524 100%);
+  border-image: linear-gradient(45deg, #FF230F 0%, #BBE524 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a3-a2 {
+  background: linear-gradient(45deg, #FF230F 0%, #2682A6 100%);
+}
+
+.fg-gradient-a3-a2 {
+  background: linear-gradient(45deg, #FF230F 0%, #2682A6 100%);
+  border-image: linear-gradient(45deg, #FF230F 0%, #2682A6 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a3-a4 {
+  background: linear-gradient(45deg, #FF230F 0%, #FB9902 100%);
+}
+
+.fg-gradient-a3-a4 {
+  background: linear-gradient(45deg, #FF230F 0%, #FB9902 100%);
+  border-image: linear-gradient(45deg, #FF230F 0%, #FB9902 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a4 {
+  background: linear-gradient(103deg, #7d4c01 0%, #FB9902 100%);
+}
+
+.fg-gradient-a4 {
+  background: linear-gradient(103deg, #7d4c01 0%, #FB9902 100%);
+  border-image: linear-gradient(103deg, #7d4c01 0%, #FB9902 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a4-a1 {
+  background: linear-gradient(45deg, #FB9902 0%, #BBE524 100%);
+}
+
+.fg-gradient-a4-a1 {
+  background: linear-gradient(45deg, #FB9902 0%, #BBE524 100%);
+  border-image: linear-gradient(45deg, #FB9902 0%, #BBE524 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a4-a2 {
+  background: linear-gradient(45deg, #FB9902 0%, #2682A6 100%);
+}
+
+.fg-gradient-a4-a2 {
+  background: linear-gradient(45deg, #FB9902 0%, #2682A6 100%);
+  border-image: linear-gradient(45deg, #FB9902 0%, #2682A6 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-a4-a3 {
+  background: linear-gradient(45deg, #FB9902 0%, #FF230F 100%);
+}
+
+.fg-gradient-a4-a3 {
+  background: linear-gradient(45deg, #FB9902 0%, #FF230F 100%);
+  border-image: linear-gradient(45deg, #FB9902 0%, #FF230F 100%) 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.bg-gradient-gray {
+  background: linear-gradient(96deg, #333 0%, #777 100%);
+}
+
+.bg-gradient-lightgray {
+  background: linear-gradient(96deg, #777 0%, #eee 100%);
+}
+
+.box-shadow {
+  box-shadow: 0 1px 5px #aaa;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .box-shadow {
+    box-shadow: 0 1px 5px #333;
+  }
+}
+body[dark] .box-shadow {
+  box-shadow: 0 1px 5px #333;
+}
+
+.box-shadow-dark {
+  box-shadow: 0 1px 5px #333;
+}
+
+.box-shadow-light {
+  box-shadow: 0 1px 5px #aaa;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 5px #aaa;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .text-shadow {
+    text-shadow: 0 1px 5px #333;
+  }
+}
+body[dark] .text-shadow {
+  text-shadow: 0 1px 5px #333;
+}
+
+.text-shadow-dark {
+  text-shadow: 0 1px 5px #333;
+}
+
+.text-shadow-light {
+  text-shadow: 0 1px 5px #aaa;
+}
+
+@font-face {
+  font-family: extrabold;
+  src: url("/font/LeagueMono-ExtraBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: bold;
+  src: url("/font/LeagueMono-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: semibold;
+  src: url("/font/LeagueMono-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: medium;
+  src: url("/font/LeagueMono-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: regular;
+  src: url("/font/LeagueMono-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: thin;
+  src: url("/font/LeagueMono-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: light;
+  src: url("/font/LeagueMono-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: ultralight;
+  src: url("/font/LeagueMono-UltraLight.woff2") format("woff2");
+}
+body {
+  font-family: light;
+}
+
+h1, h2, h3 {
+  font-family: extrabold;
+}
+
+h4, h5, h6 {
+  font-family: semibold;
+}
+
+samp {
+  font-family: thin;
+}
+
+dl dt {
+  font-family: semibold;
+}
+
+pre, code {
+  font-family: light;
+}
+
+.container {
+  margin: 0% auto;
+  overflow: auto;
+  max-width: 1024px;
+  overflow: visible;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 0% 5px;
+    overflow: auto;
+    max-width: unset;
+    overflow: visible;
+  }
+}
+@media only screen and (max-width: 960px) and (min-width: 769px) {
+  .container {
+    margin: 0% auto;
+    overflow: auto;
+    max-width: 758px;
+    overflow: visible;
+  }
+}
+@media only screen and (max-width: 1080px) and (min-width: 961px) {
+  .container {
+    margin: 0% auto;
+    overflow: auto;
+    max-width: 950px;
+    overflow: visible;
+  }
+}
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-vh {
+  height: 100vh;
+}
+
+.full-vw {
+  width: 100vw;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin {
+  margin: 0 5px;
+}
+
+.margin-2x {
+  margin: 0 10px;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.margin-top-bottom {
+  margin: 5px 0;
+}
+
+.margin-top-bottom-2x {
+  margin: 10px 0;
+}
+
+.margin-top-bottom-auto {
+  margin: auto 0;
+}
+
+.overflow-y {
+  overflow-y: auto;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.flex-layout {
+  display: flex;
+}
+.flex-layout.vertical {
+  flex-direction: column;
+}
+.flex-layout.vertical .reverse {
+  flex-direction: column-reverse;
+}
+.flex-layout.horizontal {
+  flex-direction: row;
+}
+.flex-layout.horizontal .reverse {
+  flex-direction: row-reverse;
+}
+.flex-layout.wrap {
+  flex-wrap: wrap;
+}
+.flex-layout.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex {
+  flex: 1 1 auto;
+}
+
+.flex-grow {
+  flex: 1 0 auto;
+}
+
+.flex-shrink {
+  flex: 0 1 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .flex-layout.responsive.bp-0 {
+    flex-direction: column;
+  }
+  .flex-layout.responsive.bp-0 .reverse {
+    flex-direction: column-reverse;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .flex-layout.responsive.bp-0 {
+    flex-direction: row;
+  }
+  .flex-layout.responsive.bp-0 .reverse {
+    flex-direction: row-reverse;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .flex-layout.responsive.bp-1 {
+    flex-direction: column;
+  }
+  .flex-layout.responsive.bp-1 .reverse {
+    flex-direction: column-reverse;
+  }
+}
+@media only screen and (min-width: 961px) {
+  .flex-layout.responsive.bp-1 {
+    flex-direction: row;
+  }
+  .flex-layout.responsive.bp-1 .reverse {
+    flex-direction: row-reverse;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .flex-layout.responsive.bp-2 {
+    flex-direction: column;
+  }
+  .flex-layout.responsive.bp-2 .reverse {
+    flex-direction: column-reverse;
+  }
+}
+@media only screen and (min-width: 1081px) {
+  .flex-layout.responsive.bp-2 {
+    flex-direction: row;
+  }
+  .flex-layout.responsive.bp-2 .reverse {
+    flex-direction: row-reverse;
+  }
+}
+.height-10 {
+  height: 10px;
+}
+
+.height-20 {
+  height: 20px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  margin: 10px 0;
+}
+
+h4, h5, h6 {
+  margin: 5px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img.cover {
+  object-fit: cover;
+}
+
+img.contain {
+  object-fit: contain;
+}
+
+.grid-layout {
+  display: grid;
+  grid-auto-rows: auto;
+  margin: 0 10px;
+  align-items: stretch;
+  grid-auto-flow: row dense;
+}
+@media only screen and (max-width: 640px) {
+  .grid-layout {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 641px) {
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .grid-layout {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 1650px) and (min-width: 1281px) {
+  .grid-layout {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (max-width: 1920px) and (min-width: 1651px) {
+  .grid-layout {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .grid-layout {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.grid-colspan-2 {
+  grid-column: span 2;
+}
+@media only screen and (max-width: 640px) {
+  .grid-colspan-2 {
+    grid-column: span 1;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 641px) {
+  .grid-colspan-2 {
+    grid-column: span 2;
+  }
+}
+
+.grid-colspan-3 {
+  grid-column: span 3;
+}
+@media only screen and (max-width: 640px) {
+  .grid-colspan-3 {
+    grid-column: span 1;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 641px) {
+  .grid-colspan-3 {
+    grid-column: span 2;
+  }
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .grid-colspan-3 {
+    grid-column: span 3;
+  }
+}
+
+.grid-rowspan-2 {
+  grid-row: span 2;
+}
+
+.grid-rowspan-3 {
+  grid-row: span 3;
+}
+
+.grid-gap {
+  gap: 10px;
+}
+
+.rel-layout {
+  position: relative;
+}
+.rel-layout > .abs {
+  position: absolute;
+}
+.rel-layout > .abs.fill {
+  height: 100%;
+  width: 100%;
+}
+.rel-layout > .abs.zero {
+  top: 0;
+  left: 0;
+}
+.rel-layout > .abs.bottom-right {
+  bottom: -20px;
+  right: -20px;
+}
+.rel-layout > .abs.bottom-right.p-10 {
+  bottom: -10px;
+  right: -10px;
+}
+.rel-layout > .abs.bottom-right.p-5 {
+  bottom: -5px;
+  right: -5px;
+}
+.rel-layout > .rel {
+  position: relative;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.title-banner, .banner {
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.img.title-banner, .img.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.title-banner:not(.no-title-resize) h1, .banner:not(.no-title-resize) h1 {
+  font-size: 3em;
+}
+.title-banner:not(.no-title-resize) p, .banner:not(.no-title-resize) p {
+  font-size: 1.5em;
+}
+
+.banner {
+  height: 100vh;
+}
+.title-banner {
+  height: min(50vh, 680px);
+}
+.banner-footer-wrapper {
+  position: relative;
+}
+
+.banner-footer {
+  font-size: unset;
+  min-height: 32px;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.content-card, .content-square {
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  min-width: 240px;
+  margin: 5px 10px 5px 0;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .content-card, .content-square {
+    border-color: #333;
+  }
+}
+body[dark] .content-card, body[dark] .content-square {
+  border-color: #333;
+}
+.content-card.set-width, .set-width.content-square {
+  width: 240px;
+}
+.content-card.set-min-width, .set-min-width.content-square {
+  min-width: 240px;
+}
+.content-card.no-border, .no-border.content-square {
+  border: 0;
+}
+.content-card.no-rounded-corners, .no-rounded-corners.content-square {
+  border-radius: 0;
+}
+.content-card.no-padding, .no-padding.content-square {
+  padding: 0;
+}
+.content-card.no-margin, .no-margin.content-square {
+  margin: 0;
+}
+.content-card.no-margin-right, .no-margin-right.content-square {
+  margin-right: 0;
+}
+.content-card.shadow, .shadow.content-square {
+  box-shadow: 0 1px 5px #aaa;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.content-card .round-top-corners, .content-square .round-top-corners {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.content-card .round-right-corners, .content-square .round-right-corners {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.content-card .round-bottom-corners, .content-square .round-bottom-corners {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.content-card .round-left-corners, .content-square .round-left-corners {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.content-square {
+  border-radius: 0;
+  width: 240px;
+  height: 240px;
+}
+
+.text-section {
+  background-color: #eee;
+  border-left: 5px solid #333;
+  padding: 10px 10px 10px 5px;
+  color: #333;
+}
+.text-section:not(.no-margin) {
+  margin: 5px 0;
+}
+.text-section p {
+  margin: 0px;
+}
+.text-section h1, .text-section h2, .text-section h3, .text-section h4, .text-section h5, .text-section h6 {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.text-section.accent-1 {
+  background-color: white;
+  border-color: #BBE524;
+  color: #BBE524;
+}
+.text-section.accent-2 {
+  background-color: #d6edf6;
+  border-color: #2682A6;
+  color: #2682A6;
+}
+.text-section.accent-3 {
+  background-color: white;
+  border-color: #FF230F;
+  color: #FF230F;
+}
+.text-section.accent-4 {
+  background-color: #fffefd;
+  border-color: #FB9902;
+  color: #FB9902;
+}
+.text-section.error {
+  background-color: white;
+  border-color: #FF230F;
+  color: #FF230F;
+}
+.text-section.warn {
+  background-color: white;
+  border-color: #FFC30F;
+  color: #FFC30F;
+}
+
+.app-bar {
+  height: 32px;
+  margin: 0;
+  border: 0;
+  padding: 10px;
+}
+.app-bar:not([class*=bg-accent]) {
+  background-color: black;
+  color: white;
+}
+
+.app-bar h1, .app-bar h2, .app-bar h3, .app-bar h4, .app-bar h5, .app-bar h6, .app-bar p {
+  margin: 0;
+}
+
+form:not(.no-margin) {
+  margin: 10px 0;
+}
+
+form .body {
+  border-left: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  border-top: 0px;
+  padding: 10px;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  form .body {
+    border-color: #333;
+  }
+}
+body[dark] form .body {
+  border-color: #333;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 10px 0;
+}
+
+fieldset.required label::after {
+  content: "•";
+  font-size: 1.5em;
+  color: #FF230F;
+  vertical-align: middle;
+}
+
+fieldset.error .errorText {
+  color: #FF230F;
+}
+
+fieldset.error label {
+  color: #FF230F;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+label:not(.option) {
+  font-family: semibold;
+}
+
+legend {
+  font-family: bold;
+  text-align: center;
+}
+
+input:not([type=image]):not([type=button]):not([type=reset]):not([type=submit]), textarea, select {
+  font-family: light;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input:not([type=image]):not([type=button]):not([type=reset]):not([type=submit]), textarea, select {
+    border-color: #333;
+  }
+}
+body[dark] input:not([type=image]):not([type=button]):not([type=reset]):not([type=submit]), body[dark] textarea, body[dark] select {
+  border-color: #333;
+}
+input[disabled]:not([type=image]):not([type=button]):not([type=reset]):not([type=submit]), textarea[disabled], select[disabled] {
+  background-color: #999;
+}
+
+textarea, select[multiple] {
+  min-height: 16px;
+  resize: vertical;
+}
+
+select {
+  background-color: white;
+}
+select[multiple] {
+  min-height: 56px;
+}
+
+textarea {
+  border-radius: 5px 5px 0px 5px;
+}
+
+input {
+  accent-color: #BBE524;
+}
+input[type=image] {
+  width: 100%;
+}
+
+table tfoot td, table td, table {
+  border-color: #aaa;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  table tfoot td, table td, table {
+    border-color: #333;
+  }
+}
+body[dark] table td, table body[dark] td, body[dark] table {
+  border-color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #aaa;
+}
+
+table caption {
+  text-align: center;
+  font-family: bold;
+  padding: 10px;
+}
+
+table thead {
+  background-color: #002C3D;
+  color: white;
+}
+
+table tbody {
+  font-family: light;
+}
+
+table tfoot {
+  font-family: medium;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #ffffff11;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #00000011;
+}
+
+table th {
+  padding: 10px;
+  font-family: semibold;
+}
+
+table tr.active {
+  font-weight: bold;
+}
+
+table tbody tr:hover td {
+  color: #555;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  table tbody tr:hover td {
+    color: #aaa;
+  }
+}
+body[dark] table tbody tr:hover td {
+  color: #aaa;
+}
+
+table td {
+  padding: 10px;
+  border: 1px solid #aaa;
+}
+
+table tfoot td {
+  border: 1px solid #aaa;
+}
+
+.chip-lg.outline:not([class*=accent]), .chip-md.outline:not([class*=accent]), .chip-sm.outline:not([class*=accent]) {
+  border-color: #aaa;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .chip-lg.outline:not([class*=accent]), .chip-md.outline:not([class*=accent]), .chip-sm.outline:not([class*=accent]) {
+    border-color: #333;
+  }
+}
+body[dark] .chip-lg.outline:not([class*=accent]), body[dark] .chip-md.outline:not([class*=accent]), body[dark] .chip-sm.outline:not([class*=accent]) {
+  border-color: #333;
+}
+
+.chip-lg:not([class*=bg-accent]):not(.outline), .chip-md:not([class*=bg-accent]):not(.outline), .chip-sm:not([class*=bg-accent]):not(.outline) {
+  background-color: #aaa;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .chip-lg:not([class*=bg-accent]):not(.outline), .chip-md:not([class*=bg-accent]):not(.outline), .chip-sm:not([class*=bg-accent]):not(.outline) {
+    background-color: #333;
+  }
+}
+body[dark] .chip-lg:not([class*=bg-accent]):not(.outline), body[dark] .chip-md:not([class*=bg-accent]):not(.outline), body[dark] .chip-sm:not([class*=bg-accent]):not(.outline) {
+  background-color: #333;
+}
+
+.chip-lg, .chip-md, .chip-sm {
+  font-family: semibold;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+}
+
+.chip-lg.outline, .chip-md.outline, .chip-sm.outline {
+  border: 2px solid black;
+}
+[class*=accent].chip-lg.outline, [class*=accent].chip-md.outline, [class*=accent].chip-sm.outline {
+  border-color: currentColor;
+}
+
+.chip-sm {
+  border-radius: 16px;
+  height: 16px;
+}
+.chip-md {
+  border-radius: 32px;
+  height: 32px;
+  line-height: 32px;
+}
+.chip-lg {
+  border-radius: 56px;
+  height: 56px;
+  line-height: 56px;
+  padding: 10px;
+}
+.backdrop[open] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000088;
+  width: 100vw;
+  height: 100vh;
+}
+
+.backdrop:not([open]) {
+  display: none;
+}
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.dialog {
+  border: 2px solid black;
+  padding: 0;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  .dialog {
+    background-color: #111;
+    color: white;
+  }
+}
+body[dark] .dialog {
+  background-color: #111;
+  color: white;
+}
+
+.icon {
+  margin: auto 5px;
+  width: 24px;
+  height: 24px;
+}
+.icon.left {
+  margin-left: 0;
+}
+.icon.right {
+  margin-right: 0;
+}
+.icon.center {
+  padding: auto;
+}
+
+.icon-btn {
+  padding: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.icon-btn:hover {
+  background-color: #00000044;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .icon-btn:hover:not(.dark-backdrop):not(.light-backdrop) {
+    background-color: #ffffff88;
+  }
+}
+body[dark] .icon-btn:hover:not(.light-backdrop), .icon-btn:hover.dark-backdrop {
+  background-color: #ffffff88;
+}
+.icon-btn:hover.light-backdrop {
+  background-color: #00000044;
+}
+
+.badge {
+  width: 8px;
+  height: 8px;
+  background-color: currentColor;
+  border-radius: 4px;
+}
+.badge.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.badge.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.badge.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.badge.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.badge-container {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/**
+ * Contains styling for buttons
+ */
+.button, input[type=reset], input[type=submit], input[type=button], button {
+  padding: 10px;
+  font-family: medium;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button {
+  border: 1px solid currentColor;
+  color: currentColor;
+  background-color: transparent;
+}
+button:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #eee;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button:hover {
+    color: #333;
+    background-color: #eee;
+  }
+}
+body[dark] button:hover {
+  color: #333;
+  background-color: #eee;
+}
+button.accent-1 {
+  border-color: #BBE524;
+  color: #BBE524;
+}
+button:hover.accent-1 {
+  border-color: transparent;
+  background-color: #BBE524;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button:hover.accent-1 {
+    color: black;
+    background-color: #BBE524;
+  }
+}
+body[dark] button:hover.accent-1 {
+  color: black;
+  background-color: #BBE524;
+}
+button.accent-2 {
+  border-color: #2682A6;
+  color: #2682A6;
+}
+button:hover.accent-2 {
+  border-color: transparent;
+  background-color: #2682A6;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button:hover.accent-2 {
+    color: black;
+    background-color: #2682A6;
+  }
+}
+body[dark] button:hover.accent-2 {
+  color: black;
+  background-color: #2682A6;
+}
+button.accent-3 {
+  border-color: #FF230F;
+  color: #FF230F;
+}
+button:hover.accent-3 {
+  border-color: transparent;
+  background-color: #FF230F;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button:hover.accent-3 {
+    color: white;
+    background-color: #FF230F;
+  }
+}
+body[dark] button:hover.accent-3 {
+  color: white;
+  background-color: #FF230F;
+}
+button.accent-4 {
+  border-color: #FB9902;
+  color: #FB9902;
+}
+button:hover.accent-4 {
+  border-color: transparent;
+  background-color: #FB9902;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button:hover.accent-4 {
+    color: white;
+    background-color: #FB9902;
+  }
+}
+body[dark] button:hover.accent-4 {
+  color: white;
+  background-color: #FB9902;
+}
+button.primary {
+  background-color: #333;
+  color: #eee;
+  border: 0;
+}
+button.primary.accent-1 {
+  background-color: #BBE524;
+  color: black;
+}
+button.primary:hover.accent-1 {
+  background-color: #eee;
+  color: #BBE524;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button.primary:hover.accent-1 {
+    color: #BBE524;
+    background-color: #eee;
+  }
+}
+body[dark] button.primary:hover.accent-1 {
+  color: #BBE524;
+  background-color: #eee;
+}
+button.primary.accent-2 {
+  background-color: #2682A6;
+  color: black;
+}
+button.primary:hover.accent-2 {
+  background-color: #eee;
+  color: #2682A6;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button.primary:hover.accent-2 {
+    color: #2682A6;
+    background-color: #eee;
+  }
+}
+body[dark] button.primary:hover.accent-2 {
+  color: #2682A6;
+  background-color: #eee;
+}
+button.primary.accent-3 {
+  background-color: #FF230F;
+  color: white;
+}
+button.primary:hover.accent-3 {
+  background-color: #eee;
+  color: #FF230F;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button.primary:hover.accent-3 {
+    color: #FF230F;
+    background-color: #eee;
+  }
+}
+body[dark] button.primary:hover.accent-3 {
+  color: #FF230F;
+  background-color: #eee;
+}
+button.primary.accent-4 {
+  background-color: #FB9902;
+  color: white;
+}
+button.primary:hover.accent-4 {
+  background-color: #eee;
+  color: #FB9902;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  button.primary:hover.accent-4 {
+    color: #FB9902;
+    background-color: #eee;
+  }
+}
+body[dark] button.primary:hover.accent-4 {
+  color: #FB9902;
+  background-color: #eee;
+}
+button.tertiary {
+  border: 0;
+}
+
+input[type=button] {
+  border: 1px solid currentColor;
+  color: currentColor;
+  background-color: transparent;
+}
+input[type=button]:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #eee;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button]:hover {
+    color: #333;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=button]:hover {
+  color: #333;
+  background-color: #eee;
+}
+input[type=button].accent-1 {
+  border-color: #BBE524;
+  color: #BBE524;
+}
+input[type=button]:hover.accent-1 {
+  border-color: transparent;
+  background-color: #BBE524;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button]:hover.accent-1 {
+    color: black;
+    background-color: #BBE524;
+  }
+}
+body[dark] input[type=button]:hover.accent-1 {
+  color: black;
+  background-color: #BBE524;
+}
+input[type=button].accent-2 {
+  border-color: #2682A6;
+  color: #2682A6;
+}
+input[type=button]:hover.accent-2 {
+  border-color: transparent;
+  background-color: #2682A6;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button]:hover.accent-2 {
+    color: black;
+    background-color: #2682A6;
+  }
+}
+body[dark] input[type=button]:hover.accent-2 {
+  color: black;
+  background-color: #2682A6;
+}
+input[type=button].accent-3 {
+  border-color: #FF230F;
+  color: #FF230F;
+}
+input[type=button]:hover.accent-3 {
+  border-color: transparent;
+  background-color: #FF230F;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button]:hover.accent-3 {
+    color: white;
+    background-color: #FF230F;
+  }
+}
+body[dark] input[type=button]:hover.accent-3 {
+  color: white;
+  background-color: #FF230F;
+}
+input[type=button].accent-4 {
+  border-color: #FB9902;
+  color: #FB9902;
+}
+input[type=button]:hover.accent-4 {
+  border-color: transparent;
+  background-color: #FB9902;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button]:hover.accent-4 {
+    color: white;
+    background-color: #FB9902;
+  }
+}
+body[dark] input[type=button]:hover.accent-4 {
+  color: white;
+  background-color: #FB9902;
+}
+input[type=button].primary {
+  background-color: #333;
+  color: #eee;
+  border: 0;
+}
+input[type=button].primary.accent-1 {
+  background-color: #BBE524;
+  color: black;
+}
+input[type=button].primary:hover.accent-1 {
+  background-color: #eee;
+  color: #BBE524;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button].primary:hover.accent-1 {
+    color: #BBE524;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=button].primary:hover.accent-1 {
+  color: #BBE524;
+  background-color: #eee;
+}
+input[type=button].primary.accent-2 {
+  background-color: #2682A6;
+  color: black;
+}
+input[type=button].primary:hover.accent-2 {
+  background-color: #eee;
+  color: #2682A6;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button].primary:hover.accent-2 {
+    color: #2682A6;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=button].primary:hover.accent-2 {
+  color: #2682A6;
+  background-color: #eee;
+}
+input[type=button].primary.accent-3 {
+  background-color: #FF230F;
+  color: white;
+}
+input[type=button].primary:hover.accent-3 {
+  background-color: #eee;
+  color: #FF230F;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button].primary:hover.accent-3 {
+    color: #FF230F;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=button].primary:hover.accent-3 {
+  color: #FF230F;
+  background-color: #eee;
+}
+input[type=button].primary.accent-4 {
+  background-color: #FB9902;
+  color: white;
+}
+input[type=button].primary:hover.accent-4 {
+  background-color: #eee;
+  color: #FB9902;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=button].primary:hover.accent-4 {
+    color: #FB9902;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=button].primary:hover.accent-4 {
+  color: #FB9902;
+  background-color: #eee;
+}
+input[type=button].tertiary {
+  border: 0;
+}
+
+input[type=submit] {
+  border: 0;
+  color: currentColor;
+  background-color: #333;
+}
+input[type=submit]:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #eee;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit]:hover {
+    color: #333;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=submit]:hover {
+  color: #333;
+  background-color: #eee;
+}
+input[type=submit].accent-1 {
+  background-color: #BBE524;
+  color: black;
+}
+input[type=submit]:hover.accent-1 {
+  background-color: #eee;
+  color: #BBE524;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit]:hover.accent-1 {
+    color: #BBE524;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=submit]:hover.accent-1 {
+  color: #BBE524;
+  background-color: #eee;
+}
+input[type=submit].accent-2 {
+  background-color: #2682A6;
+  color: black;
+}
+input[type=submit]:hover.accent-2 {
+  background-color: #eee;
+  color: #2682A6;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit]:hover.accent-2 {
+    color: #2682A6;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=submit]:hover.accent-2 {
+  color: #2682A6;
+  background-color: #eee;
+}
+input[type=submit].accent-3 {
+  background-color: #FF230F;
+  color: white;
+}
+input[type=submit]:hover.accent-3 {
+  background-color: #eee;
+  color: #FF230F;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit]:hover.accent-3 {
+    color: #FF230F;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=submit]:hover.accent-3 {
+  color: #FF230F;
+  background-color: #eee;
+}
+input[type=submit].accent-4 {
+  background-color: #FB9902;
+  color: white;
+}
+input[type=submit]:hover.accent-4 {
+  background-color: #eee;
+  color: #FB9902;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit]:hover.accent-4 {
+    color: #FB9902;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=submit]:hover.accent-4 {
+  color: #FB9902;
+  background-color: #eee;
+}
+input[type=submit].secondary {
+  border: 1px solid currentColor;
+  color: currentColor;
+  background-color: transparent;
+}
+input[type=submit].secondary:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #eee;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].secondary:hover {
+    color: #333;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=submit].secondary:hover {
+  color: #333;
+  background-color: #eee;
+}
+input[type=submit].secondary.accent-1 {
+  border-color: #BBE524;
+  color: #BBE524;
+}
+input[type=submit].secondary:hover.accent-1 {
+  border-color: transparent;
+  background-color: #BBE524;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].secondary:hover.accent-1 {
+    color: black;
+    background-color: #BBE524;
+  }
+}
+body[dark] input[type=submit].secondary:hover.accent-1 {
+  color: black;
+  background-color: #BBE524;
+}
+input[type=submit].secondary.accent-2 {
+  border-color: #2682A6;
+  color: #2682A6;
+}
+input[type=submit].secondary:hover.accent-2 {
+  border-color: transparent;
+  background-color: #2682A6;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].secondary:hover.accent-2 {
+    color: black;
+    background-color: #2682A6;
+  }
+}
+body[dark] input[type=submit].secondary:hover.accent-2 {
+  color: black;
+  background-color: #2682A6;
+}
+input[type=submit].secondary.accent-3 {
+  border-color: #FF230F;
+  color: #FF230F;
+}
+input[type=submit].secondary:hover.accent-3 {
+  border-color: transparent;
+  background-color: #FF230F;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].secondary:hover.accent-3 {
+    color: white;
+    background-color: #FF230F;
+  }
+}
+body[dark] input[type=submit].secondary:hover.accent-3 {
+  color: white;
+  background-color: #FF230F;
+}
+input[type=submit].secondary.accent-4 {
+  border-color: #FB9902;
+  color: #FB9902;
+}
+input[type=submit].secondary:hover.accent-4 {
+  border-color: transparent;
+  background-color: #FB9902;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].secondary:hover.accent-4 {
+    color: white;
+    background-color: #FB9902;
+  }
+}
+body[dark] input[type=submit].secondary:hover.accent-4 {
+  color: white;
+  background-color: #FB9902;
+}
+input[type=submit].tertiary {
+  border: 0;
+  color: currentColor;
+  background-color: transparent;
+}
+input[type=submit].tertiary:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #eee;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].tertiary:hover {
+    color: #333;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=submit].tertiary:hover {
+  color: #333;
+  background-color: #eee;
+}
+input[type=submit].tertiary.accent-1 {
+  border-color: #BBE524;
+  color: #BBE524;
+}
+input[type=submit].tertiary:hover.accent-1 {
+  border-color: transparent;
+  background-color: #BBE524;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].tertiary:hover.accent-1 {
+    color: black;
+    background-color: #BBE524;
+  }
+}
+body[dark] input[type=submit].tertiary:hover.accent-1 {
+  color: black;
+  background-color: #BBE524;
+}
+input[type=submit].tertiary.accent-2 {
+  border-color: #2682A6;
+  color: #2682A6;
+}
+input[type=submit].tertiary:hover.accent-2 {
+  border-color: transparent;
+  background-color: #2682A6;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].tertiary:hover.accent-2 {
+    color: black;
+    background-color: #2682A6;
+  }
+}
+body[dark] input[type=submit].tertiary:hover.accent-2 {
+  color: black;
+  background-color: #2682A6;
+}
+input[type=submit].tertiary.accent-3 {
+  border-color: #FF230F;
+  color: #FF230F;
+}
+input[type=submit].tertiary:hover.accent-3 {
+  border-color: transparent;
+  background-color: #FF230F;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].tertiary:hover.accent-3 {
+    color: white;
+    background-color: #FF230F;
+  }
+}
+body[dark] input[type=submit].tertiary:hover.accent-3 {
+  color: white;
+  background-color: #FF230F;
+}
+input[type=submit].tertiary.accent-4 {
+  border-color: #FB9902;
+  color: #FB9902;
+}
+input[type=submit].tertiary:hover.accent-4 {
+  border-color: transparent;
+  background-color: #FB9902;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=submit].tertiary:hover.accent-4 {
+    color: white;
+    background-color: #FB9902;
+  }
+}
+body[dark] input[type=submit].tertiary:hover.accent-4 {
+  color: white;
+  background-color: #FB9902;
+}
+
+input[type=reset] {
+  border: 0;
+  color: white;
+  background-color: #FF230F;
+}
+input[type=reset]:hover {
+  border-color: transparent;
+  color: #FF230F;
+  background-color: #eee;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset]:hover {
+    color: #FF230F;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=reset]:hover {
+  color: #FF230F;
+  background-color: #eee;
+}
+input[type=reset].accent-1 {
+  background-color: #BBE524;
+  color: black;
+}
+input[type=reset]:hover.accent-1 {
+  background-color: #eee;
+  color: #BBE524;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset]:hover.accent-1 {
+    color: #BBE524;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=reset]:hover.accent-1 {
+  color: #BBE524;
+  background-color: #eee;
+}
+input[type=reset].accent-2 {
+  background-color: #2682A6;
+  color: black;
+}
+input[type=reset]:hover.accent-2 {
+  background-color: #eee;
+  color: #2682A6;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset]:hover.accent-2 {
+    color: #2682A6;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=reset]:hover.accent-2 {
+  color: #2682A6;
+  background-color: #eee;
+}
+input[type=reset].accent-3 {
+  background-color: #FF230F;
+  color: white;
+}
+input[type=reset]:hover.accent-3 {
+  background-color: #eee;
+  color: #FF230F;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset]:hover.accent-3 {
+    color: #FF230F;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=reset]:hover.accent-3 {
+  color: #FF230F;
+  background-color: #eee;
+}
+input[type=reset].accent-4 {
+  background-color: #FB9902;
+  color: white;
+}
+input[type=reset]:hover.accent-4 {
+  background-color: #eee;
+  color: #FB9902;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset]:hover.accent-4 {
+    color: #FB9902;
+    background-color: #eee;
+  }
+}
+body[dark] input[type=reset]:hover.accent-4 {
+  color: #FB9902;
+  background-color: #eee;
+}
+input[type=reset].secondary {
+  border: 1px solid #FF230F;
+  color: #FF230F;
+  background-color: transparent;
+}
+input[type=reset].secondary:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #FF230F;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].secondary:hover {
+    color: #333;
+    background-color: #FF230F;
+  }
+}
+body[dark] input[type=reset].secondary:hover {
+  color: #333;
+  background-color: #FF230F;
+}
+input[type=reset].secondary.accent-1 {
+  border-color: #BBE524;
+  color: #BBE524;
+}
+input[type=reset].secondary:hover.accent-1 {
+  border-color: transparent;
+  background-color: #BBE524;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].secondary:hover.accent-1 {
+    color: black;
+    background-color: #BBE524;
+  }
+}
+body[dark] input[type=reset].secondary:hover.accent-1 {
+  color: black;
+  background-color: #BBE524;
+}
+input[type=reset].secondary.accent-2 {
+  border-color: #2682A6;
+  color: #2682A6;
+}
+input[type=reset].secondary:hover.accent-2 {
+  border-color: transparent;
+  background-color: #2682A6;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].secondary:hover.accent-2 {
+    color: black;
+    background-color: #2682A6;
+  }
+}
+body[dark] input[type=reset].secondary:hover.accent-2 {
+  color: black;
+  background-color: #2682A6;
+}
+input[type=reset].secondary.accent-3 {
+  border-color: #FF230F;
+  color: #FF230F;
+}
+input[type=reset].secondary:hover.accent-3 {
+  border-color: transparent;
+  background-color: #FF230F;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].secondary:hover.accent-3 {
+    color: white;
+    background-color: #FF230F;
+  }
+}
+body[dark] input[type=reset].secondary:hover.accent-3 {
+  color: white;
+  background-color: #FF230F;
+}
+input[type=reset].secondary.accent-4 {
+  border-color: #FB9902;
+  color: #FB9902;
+}
+input[type=reset].secondary:hover.accent-4 {
+  border-color: transparent;
+  background-color: #FB9902;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].secondary:hover.accent-4 {
+    color: white;
+    background-color: #FB9902;
+  }
+}
+body[dark] input[type=reset].secondary:hover.accent-4 {
+  color: white;
+  background-color: #FB9902;
+}
+input[type=reset].tertiary {
+  border: 0;
+  color: #FF230F;
+  background-color: transparent;
+}
+input[type=reset].tertiary:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #FF230F;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].tertiary:hover {
+    color: #333;
+    background-color: #FF230F;
+  }
+}
+body[dark] input[type=reset].tertiary:hover {
+  color: #333;
+  background-color: #FF230F;
+}
+input[type=reset].tertiary.accent-1 {
+  border-color: #BBE524;
+  color: #BBE524;
+}
+input[type=reset].tertiary:hover.accent-1 {
+  border-color: transparent;
+  background-color: #BBE524;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].tertiary:hover.accent-1 {
+    color: black;
+    background-color: #BBE524;
+  }
+}
+body[dark] input[type=reset].tertiary:hover.accent-1 {
+  color: black;
+  background-color: #BBE524;
+}
+input[type=reset].tertiary.accent-2 {
+  border-color: #2682A6;
+  color: #2682A6;
+}
+input[type=reset].tertiary:hover.accent-2 {
+  border-color: transparent;
+  background-color: #2682A6;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].tertiary:hover.accent-2 {
+    color: black;
+    background-color: #2682A6;
+  }
+}
+body[dark] input[type=reset].tertiary:hover.accent-2 {
+  color: black;
+  background-color: #2682A6;
+}
+input[type=reset].tertiary.accent-3 {
+  border-color: #FF230F;
+  color: #FF230F;
+}
+input[type=reset].tertiary:hover.accent-3 {
+  border-color: transparent;
+  background-color: #FF230F;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].tertiary:hover.accent-3 {
+    color: white;
+    background-color: #FF230F;
+  }
+}
+body[dark] input[type=reset].tertiary:hover.accent-3 {
+  color: white;
+  background-color: #FF230F;
+}
+input[type=reset].tertiary.accent-4 {
+  border-color: #FB9902;
+  color: #FB9902;
+}
+input[type=reset].tertiary:hover.accent-4 {
+  border-color: transparent;
+  background-color: #FB9902;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  input[type=reset].tertiary:hover.accent-4 {
+    color: white;
+    background-color: #FB9902;
+  }
+}
+body[dark] input[type=reset].tertiary:hover.accent-4 {
+  color: white;
+  background-color: #FB9902;
+}
+
+.button {
+  border: 1px solid currentColor;
+  color: currentColor;
+  background-color: transparent;
+}
+.button:link, .button:visited {
+  color: #eee;
+}
+.button:hover, .button:active {
+  background-color: #eee;
+  color: #333;
+}
+.button:hover {
+  border-color: transparent;
+  color: #333;
+  background-color: #eee;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button:hover {
+    color: #333;
+    background-color: #eee;
+  }
+}
+body[dark] .button:hover {
+  color: #333;
+  background-color: #eee;
+}
+.button.accent-1 {
+  border-color: #BBE524;
+  color: #BBE524;
+}
+.button:hover.accent-1 {
+  border-color: transparent;
+  background-color: #BBE524;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button:hover.accent-1 {
+    color: black;
+    background-color: #BBE524;
+  }
+}
+body[dark] .button:hover.accent-1 {
+  color: black;
+  background-color: #BBE524;
+}
+.button.accent-2 {
+  border-color: #2682A6;
+  color: #2682A6;
+}
+.button:hover.accent-2 {
+  border-color: transparent;
+  background-color: #2682A6;
+  color: black;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button:hover.accent-2 {
+    color: black;
+    background-color: #2682A6;
+  }
+}
+body[dark] .button:hover.accent-2 {
+  color: black;
+  background-color: #2682A6;
+}
+.button.accent-3 {
+  border-color: #FF230F;
+  color: #FF230F;
+}
+.button:hover.accent-3 {
+  border-color: transparent;
+  background-color: #FF230F;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button:hover.accent-3 {
+    color: white;
+    background-color: #FF230F;
+  }
+}
+body[dark] .button:hover.accent-3 {
+  color: white;
+  background-color: #FF230F;
+}
+.button.accent-4 {
+  border-color: #FB9902;
+  color: #FB9902;
+}
+.button:hover.accent-4 {
+  border-color: transparent;
+  background-color: #FB9902;
+  color: white;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button:hover.accent-4 {
+    color: white;
+    background-color: #FB9902;
+  }
+}
+body[dark] .button:hover.accent-4 {
+  color: white;
+  background-color: #FB9902;
+}
+.button.primary {
+  background-color: #333;
+  color: #eee;
+  border: 0;
+}
+.button.primary.accent-1 {
+  background-color: #BBE524;
+  color: black;
+}
+.button.primary:hover.accent-1 {
+  background-color: #eee;
+  color: #BBE524;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button.primary:hover.accent-1 {
+    color: #BBE524;
+    background-color: #eee;
+  }
+}
+body[dark] .button.primary:hover.accent-1 {
+  color: #BBE524;
+  background-color: #eee;
+}
+.button.primary.accent-2 {
+  background-color: #2682A6;
+  color: black;
+}
+.button.primary:hover.accent-2 {
+  background-color: #eee;
+  color: #2682A6;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button.primary:hover.accent-2 {
+    color: #2682A6;
+    background-color: #eee;
+  }
+}
+body[dark] .button.primary:hover.accent-2 {
+  color: #2682A6;
+  background-color: #eee;
+}
+.button.primary.accent-3 {
+  background-color: #FF230F;
+  color: white;
+}
+.button.primary:hover.accent-3 {
+  background-color: #eee;
+  color: #FF230F;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button.primary:hover.accent-3 {
+    color: #FF230F;
+    background-color: #eee;
+  }
+}
+body[dark] .button.primary:hover.accent-3 {
+  color: #FF230F;
+  background-color: #eee;
+}
+.button.primary.accent-4 {
+  background-color: #FB9902;
+  color: white;
+}
+.button.primary:hover.accent-4 {
+  background-color: #eee;
+  color: #FB9902;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .button.primary:hover.accent-4 {
+    color: #FB9902;
+    background-color: #eee;
+  }
+}
+body[dark] .button.primary:hover.accent-4 {
+  color: #FB9902;
+  background-color: #eee;
+}
+.button.tertiary {
+  border: 0;
+}
+
+/*
+    There are 2 variations:
+    - The default, where the background color is opaque
+    - (.no-bg-color) Blurred, so that it looks neat on top of other content
+*/
+.menu-bar {
+  font-size: 20px;
+}
+.menu-bar:not(.no-bg-color) {
+  background-color: #002C3D;
+}
+
+ul.menu-bar {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.menu-bar .menu-item {
+  display: block;
+}
+.menu-bar .menu-item :first-child {
+  padding: 10px 10px 5px 10px;
+  display: block;
+}
+.menu-bar .menu-item :first-child:link, .menu-bar .menu-item :first-child:visited {
+  color: white;
+}
+.menu-bar .menu-item.selected {
+  border-bottom: 5px solid #BBE524;
+  background-color: #005170;
+}
+.menu-bar .menu-item:hover {
+  border-bottom: 5px solid #d7f07f;
+  background-color: #0076a3;
+}
+.menu-bar .menu-item:not(.selected):not(:hover) {
+  padding-bottom: 5px;
+}
+
+.footer .footer-top {
+  background-color: #001a24;
+  padding: 5px 0;
+}
+.footer .footer-top ul.link-list {
+  margin: 0;
+  list-style-type: none;
+}
+.footer .footer-top .link-list {
+  text-align: center;
+  padding: 0;
+}
+.footer .footer-top .link-list:not(:last-child) {
+  padding: 0 5px 0 0;
+}
+.footer .footer-top .link-list > * {
+  font-family: semibold;
+  display: block;
+  margin: 0 0 2px 0;
+}
+.footer .footer-top .link-list > * a:link, .footer .footer-top .link-list > * a:visited, .footer .footer-top .link-list > * {
+  color: white;
+  display: block;
+}
+.footer .footer-top .link-list > * a:hover, .footer .footer-top .link-list > *:hover {
+  color: #001a24;
+  background-color: white;
+}
+.footer .footer-top .link-list:nth-child(4n+1) > .title a:link, .footer .footer-top .link-list:nth-child(4n+1) > .title a:visited, .footer .footer-top .link-list:nth-child(4n+1) > .title {
+  color: #BBE524;
+}
+.footer .footer-top .link-list:nth-child(4n+1) > .title a:hover, .footer .footer-top .link-list:nth-child(4n+1) > .title:hover {
+  background-color: #BBE524;
+  color: #001a24;
+}
+.footer .footer-top .link-list:nth-child(4n+2) > .title a:link, .footer .footer-top .link-list:nth-child(4n+2) > .title a:visited, .footer .footer-top .link-list:nth-child(4n+2) > .title {
+  color: #2682A6;
+}
+.footer .footer-top .link-list:nth-child(4n+2) > .title a:hover, .footer .footer-top .link-list:nth-child(4n+2) > .title:hover {
+  background-color: #2682A6;
+  color: #001a24;
+}
+.footer .footer-top .link-list:nth-child(4n+3) > .title a:link, .footer .footer-top .link-list:nth-child(4n+3) > .title a:visited, .footer .footer-top .link-list:nth-child(4n+3) > .title {
+  color: #FF230F;
+}
+.footer .footer-top .link-list:nth-child(4n+3) > .title a:hover, .footer .footer-top .link-list:nth-child(4n+3) > .title:hover {
+  background-color: #FF230F;
+  color: #001a24;
+}
+.footer .footer-top .link-list:nth-child(4n+4) > .title a:link, .footer .footer-top .link-list:nth-child(4n+4) > .title a:visited, .footer .footer-top .link-list:nth-child(4n+4) > .title {
+  color: #FB9902;
+}
+.footer .footer-top .link-list:nth-child(4n+4) > .title a:hover, .footer .footer-top .link-list:nth-child(4n+4) > .title:hover {
+  background-color: #FB9902;
+  color: #001a24;
+}
+.footer .footer-top .link-list > *.title {
+  font-family: bold;
+  margin-bottom: 5px;
+}
+.footer .footer-bottom {
+  background-color: #002C3D;
+  color: white;
+  padding: 5px 0;
+}
+
+.article-brief .title {
+  color: #2682A6;
+}
+.article-brief .title > * {
+  color: #2682A6;
+}
+.article-brief .title > *:hover {
+  color: #44acd4;
+}
+.article-brief .info {
+  color: #333;
+  font-family: ultralight;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  .article-brief .info {
+    color: #ccc;
+  }
+}
+body[dark] .article-brief .info {
+  color: #ccc;
+}
+.article-brief .continue {
+  width: 100%;
+  text-align: center;
+  background-color: #ccc;
+  color: black;
+}
+.article-brief .continue:hover {
+  background-color: #eee;
+}
+
+.navbar {
+  transition: height 1s;
+  padding: 10px 0;
+  background-color: #222;
+  color: #808080;
+  font-family: semibold;
+}
+.navbar .items > *:not(.title):not(.action) {
+  margin-right: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.navbar .items .title, .navbar .items .action:hover {
+  color: white;
+}
+.navbar .items .title {
+  margin-right: 10px;
+}
+.navbar .toc .title, .navbar .toc .action:hover {
+  color: white;
+}
+
+.share-item {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: auto 5px;
+}
+
+a.button {
+  border: 0;
+  border-radius: 5px;
+  background-color: #333;
+  padding: 10px;
+  font-family: semibold;
+  text-align: center;
+  display: inline-block;
+}
+a.button:link, a.button:visited {
+  color: #eee;
+}
+a.button:hover, a.button:active {
+  background-color: #eee;
+  color: #333;
+}
+
+.landing_circle {
+  width: 256px;
+  height: 256px;
+  border-radius: 128px;
+  overflow: hidden;
+}
+
+.landing_circle > img {
+  width: 100%;
+}
+
+.vbar {
+  border-left: 5px solid currentColor;
+  padding-left: 5px;
+}
+
+.hbar {
+  border-bottom: 1px solid currentColor;
+}
+
+a:link, a:visited {
+  color: #769211;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #BBE524;
+  text-decoration: none;
+}
+
+hr {
+  border-style: solid;
+  margin: 10px 0;
+}
+
+kbd {
+  border-radius: 2px;
+  border: 1px solid black;
+  padding: 2.5px;
+  color: black;
+  background-color: white;
+  font-family: light;
+}
+
+kbd.dark {
+  background-color: #111;
+  border-color: white;
+  color: white;
+}
+
+.bg-blur {
+  backdrop-filter: blur(10px);
+}
+
+.bg-darken {
+  background-color: #00000077;
+}
+.bg-darken.hover-darken:hover {
+  background-color: #000000CC;
+}
+
+.bg-lighten {
+  background-color: #FFFFFF77;
+}
+.bg-lighten.hover-lighten:hover {
+  background-color: #FFFFFFCC;
+}
+
+.bg-img {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+figure {
+  margin: 10px;
+  padding: 10px;
+  background-color: #002C3D;
+}
+figure img {
+  width: 100%;
+}
+figure figcaption {
+  margin-top: 10px;
+  color: white;
+  font-family: semibold;
+  text-align: center;
+}
+figure figcaption .figure {
+  color: #ccc;
+  font-family: ultralight;
+}
+
+/*# sourceMappingURL=main.css.map */
