@@ -16,6 +16,8 @@ const bitmapHeightInput = document.getElementById('bitmap_height');
 const refreshCanvasButton = document.getElementById('refresh_canvas');
 const enableGridInput = document.getElementById('enable_grid');
 const blockTable = document.getElementById('block_table');
+const posBlock = document.getElementById('pos_block');
+const posByte = document.getElementById('pos_byte');
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
@@ -23,6 +25,8 @@ let wholeFileBinary = null;
 let canvasScale = 1;
 let activeTableCellIndex = -1;
 let activeTableCellType = "";
+let tableStartPos = 0;
+let tableEndPos = 32;
 
 function initializeCanvas(width, height) {
     canvas.setAttribute('width', width);
@@ -41,14 +45,17 @@ function readMioIntoCanvas(mioPart, bitmapWidth = 256, bitmapHeight = 256, scale
     canvasScale = scale;
 }
 
+function processMioFile(uint8arr) {
+    wholeFileBinary = uint8arr;
+    readMioIntoCanvas(uint8arr);
+    setTableValues(uint8arr.slice(0, 32), 4, 0, 32);
+}
+
 async function loadMioFile(event) {
     if (event.target && event.target.files && event.target.files[0]) {
         const arr = await event.target.files[0].arrayBuffer();
         const uint8arr = new Uint8Array(arr);
-        wholeFileBinary = uint8arr;
-        console.log(wholeFileBinary);
-        readMioIntoCanvas(uint8arr);
-        setTableValues(uint8arr.slice(0, 32), 4, 0, 32);
+        processMioFile(uint8arr);
     }
 }
 
@@ -62,7 +69,6 @@ function refreshCanvas(event) {
     let part = null;
     const begin = Number(binStartInput.value);
     const range = Number(binRangeInput.value);
-    console.log("refresh", begin, range);
     if (begin >= 0 && range > 0 && begin + range <= wholeFileBinary.length) {
         part = wholeFileBinary.slice(begin, begin + range)
     } else if (begin > 0 && range === -1) {
@@ -81,7 +87,6 @@ function clearTable() {
 }
 
 function setTableValues(mioPart, cols = 4, start, end) {
-    console.log("part", mioPart, cols);
     const frag = document.createDocumentFragment();
 
     // Set Title
@@ -117,10 +122,11 @@ function setTableValues(mioPart, cols = 4, start, end) {
     }
 
     blockTable.appendChild(frag);
+    tableStartPos = start;
+    tableEndPos = end;
 }
 
 function handleTableHover(event) {
-    console.log("target", event.target);
     const type = event.target.getAttribute('data_type');
     const index = parseInt(event.target.getAttribute('index'));
     if (event.type === 'mouseleave') {
@@ -143,20 +149,91 @@ function handleTableHover(event) {
     }
 }
 
+function _getBytesPositionFromCoords(x, y, scale, numCols, begin) {
+    const col = Math.floor(x / scale / 8);
+    const row = Math.floor(y / scale / 8);
+
+    const offset = (col * 32) + (row * 32 * numCols) + begin;
+
+    const toRet = {
+        col, row, offset
+    };
+
+    return toRet;
+}
+
 function handleCanvasClick(event) {
-    const col = Math.floor(event.offsetX / canvasScale / 8);
-    const row = Math.floor(event.offsetY / canvasScale / 8);
+    // const col = Math.floor(event.offsetX / canvasScale / 8);
+    // const row = Math.floor(event.offsetY / canvasScale / 8);
 
     const numCols = Math.floor(Number(bitmapWidthInput.value) / 8);
     const begin = Number(binStartInput.value);
     
-    const offset = (col * 32) + (row * 32 * numCols) + begin;
-    
-    console.log("click", event.offsetX, event.offsetY, col, row, offset);
+    // const offset = (col * 32) + (row * 32 * numCols) + begin;
+
+    const {offset} = _getBytesPositionFromCoords(event.offsetX, event.offsetY, canvasScale, numCols, begin);
 
     clearTable();
 
     setTableValues(wholeFileBinary.slice(offset, offset + 32), 4, offset, offset + 32);
+}
+
+function handleCanvasHover(event) {
+    const numCols = Math.floor(Number(bitmapWidthInput.value) / 8);
+    const begin = Number(binStartInput.value);
+
+    const {col, row, offset} = _getBytesPositionFromCoords(event.offsetX, event.offsetY, canvasScale, numCols, begin);
+
+    posBlock.textContent = `col: ${col}, row: ${row}`;
+    posByte.textContent = `start: 0x${offset.toString(16)} (${offset}), end: 0x${(offset + 32).toString(16)} (${offset + 32})`;
+}
+
+async function parseQueryParams() {
+    const params = new URLSearchParams(location.search);
+
+    // if (params.has('url')) {
+    //     const url = decodeURIComponent(params.get('url'));
+    //     console.log("Downloading from URL", url);
+    //     // Download game from URL
+    //     const response = await fetch(url, {
+    //         redirect: 'follow',
+    //         referrerPolicy: "no-referrer",
+    //         mode: 'no-cors',
+    //         credentials: 'omit'
+    //     });
+
+    //     if (response.ok) {
+    //         console.log("Reading binary file...");
+    //         const arr = await response.arrayBuffer();
+    //         wholeFileBinary = new Uint8Array(arr);
+    //     } else {
+    //         console.warn('response not ok', response);
+    //     }
+    // }
+
+    if (params.has('bin_start')) {
+        binStartInput.value = params.get('bin_start');
+    }
+    if (params.has('bin_range')) {
+        binRangeInput.value = params.get('bin_range');
+    }
+    if (params.has('scale')) {
+        scaleInput.value = params.get('scale');
+    }
+    if (params.has('canvas_width')) {
+        canvasWidthInput.value = params.get('canvas_width');
+    }
+    if (params.has('canvas_height')) {
+        canvasHeightInput.value = params.get('canvas_height');
+    }
+    if (params.has('bitmap_width')) {
+        bitmapWidthInput.value = params.get('bitmap_width');
+    }
+    if (params.has('bitmap_height')) {
+        bitmapHeightInput.value = params.get('bitmap_height');
+    }
+
+    // refreshCanvas(null);
 }
 
 function main() {
@@ -164,8 +241,14 @@ function main() {
     fileInput.addEventListener('change', loadMioFile);
     refreshCanvasButton.addEventListener('click', refreshCanvas);
     canvas.addEventListener('click', handleCanvasClick);
+    canvas.addEventListener('mousemove', handleCanvasHover);
     blockTable.addEventListener('mouseover', handleTableHover);
     blockTable.addEventListener('mouseleave', handleTableHover);
+
+    // Check for Query Params
+    if (location.search) {
+        parseQueryParams();
+    }
 }
 
 main();
