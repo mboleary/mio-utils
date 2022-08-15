@@ -32,4 +32,4 @@ This demo can also be used to display arbitrary binary files.
 
 This is an advanced version of the above tool, and has options to change parameters that control what information is displayed in the canvas, as well as having a small table to show ascii / hex data directly for a selected block.
 
-![Image of demo](https://github.com/mboleary/mio-utils/tree/main/demo/binvis-advanced)
+![Image of demo](https://raw.githubusercontent.com/mboleary/mio-utils/main/asset/binvis-advanced-demo.png)
