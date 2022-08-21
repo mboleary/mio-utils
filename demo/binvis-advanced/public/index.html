@@ -28,6 +28,12 @@
             background-color: #2682A633;
             color: #fff;
         }
+
+        #canvas_position {
+            position: sticky;
+            bottom: 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body dark>
@@ -89,16 +95,26 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="flex-layout horizontal">
-            <button type="button" disabled id="page_back" class="tertiary accent-2">&lt; Page Back</button>
-            <span id="page_index" class="flex"></span>
-            <button type="button" disabled id="page_next" class="tertiary accent-2">Page Next &gt;</button>
+    <div class="height-10"></div>
+    <div class="flex-layout horizontal center">
+        <div class="overflow-y">
+            <canvas id="canvas" width="1024" height="1024" class=""></canvas>
         </div>
-        <div class="height-10"></div>
-        <canvas id="canvas" width="1024" height="1024"></canvas>
-        <p>Position(<span id="pos_block"></span>) Bytes(<span id="pos_byte"></span>)</p>
     </div>
+    <div class="height-10"></div>
+    <div id="canvas_position" class="bg-blur bg-darken">
+        <div class="container">
+            <div class="margin-top-bottom">
+                <p>Position(<span id="pos_block"></span>) Bytes(<span id="pos_byte"></span>)</p>
+            </div>
+            <div class="flex-layout horizontal">
+                <button type="button" disabled id="page_back" class="tertiary accent-2">&lt; Page Back</button>
+                <span id="page_index" class="flex"></span>
+                <button type="button" disabled id="page_next" class="tertiary accent-2">Page Next &gt;</button>
+            </div>
+        </div>
+    </div>
+    
     <hr>
     <div class="container">
         <div class="flex-layout horizontal">

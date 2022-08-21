@@ -15,9 +15,11 @@ export function generateBitmapBlocksFromPalette(binary, palette, sx, sy) {
 
     const bx = Math.floor(sx / 8);
 
+    const stopPos = (sx / 2) * sy;
+
     let x = 0, y = 0, v = 0, w = 0, b = 0; // inner position (x, y), outer block position (v, w), b = block index
     // Note: each block is 32 bytes long
-    for (let i = 0; i < binary.length; i++) {
+    for (let i = 0; i < binary.length && i < stopPos; i++) {
         // image data is UInt8 array of sx * sy * 4 (r, g, b, a)
         // WWDIY data is a 4-bit palette
 

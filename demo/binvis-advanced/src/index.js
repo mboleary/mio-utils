@@ -73,6 +73,17 @@ async function loadMioFile(event) {
 function refreshCanvas(event) {
     if (!wholeFileBinary) return;
     context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+
+    const canvasWidth = parseInt(canvas.getAttribute("width"));
+    const canvasHeight = parseInt(canvas.getAttribute("height"));
+
+    const iCanvasWidth = parseInt(canvasWidthInput.value);
+    const iCanvasHeight = parseInt(canvasHeightInput.value);
+
+    if (iCanvasHeight !== canvasHeight || iCanvasWidth !== canvasWidth) {
+        initializeCanvas(iCanvasWidth, iCanvasHeight);
+    }
+
     let part = null;
     const begin = Number(binStartInput.value);
     const range = Number(binRangeInput.value);
