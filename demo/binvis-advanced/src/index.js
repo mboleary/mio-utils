@@ -21,6 +21,8 @@ const posByte = document.getElementById('pos_byte');
 const backPageButton = document.getElementById('page_back');
 const nextPageButton = document.getElementById('page_next');
 const pageIndex = document.getElementById('page_index');
+const backTblButton = document.getElementById('tbl_back');
+const nextTblButton = document.getElementById('tbl_next');
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
@@ -51,6 +53,7 @@ function readMioIntoCanvas(mioPart, bitmapWidth = 256, bitmapHeight = 256, scale
 function processMioFile(uint8arr) {
     wholeFileBinary = uint8arr;
     readMioIntoCanvas(uint8arr);
+    setTableButtons(0, 32);
     setTableValues(uint8arr.slice(0, 32), 4, 0, 32);
     movePage(0);
 }
@@ -88,6 +91,29 @@ function clearTable() {
     while (blockTable.firstChild) {
         blockTable.removeChild(blockTable.firstChild);
     }
+}
+
+function setTableButtons(start, end) {
+    if (start <= 0) {
+        backTblButton.setAttribute("disabled", "");
+    } else {
+        backTblButton.removeAttribute("disabled");
+    }
+
+    if (end >= wholeFileBinary.length) {
+        nextTblButton.setAttribute("disabled", "");
+    } else {
+        nextTblButton.removeAttribute("disabled");
+    }
+}
+
+function handleTableMove(amount) {
+    const start = tableStartPos + (amount * 32);
+    const end = start + (tableEndPos - tableStartPos);
+    clearTable();
+    setTableButtons(start, end);
+    setTableValues(wholeFileBinary.slice(start, end), 4, start, end);
+
 }
 
 function setTableValues(mioPart, cols = 4, start, end) {
@@ -178,7 +204,7 @@ function handleCanvasClick(event) {
     const {offset} = _getBytesPositionFromCoords(event.offsetX, event.offsetY, canvasScale, numCols, begin);
 
     clearTable();
-
+    setTableButtons(offset, offset + 32);
     setTableValues(wholeFileBinary.slice(offset, offset + 32), 4, offset, offset + 32);
 }
 
@@ -200,7 +226,7 @@ function movePage(amount) {
     let newPos = curr + (pageSize * amount);
 
     if (newPos > wholeFileBinary.length) {
-        newPos = wholeFileBinary.length - pageSize;
+        newPos = Math.max(0, wholeFileBinary.length - pageSize);
     } else if (newPos < 0) {
         newPos = 0;
     }
@@ -221,7 +247,7 @@ function movePage(amount) {
         backPageButton.removeAttribute("disabled");
     }
 
-    const numPages = Math.floor(wholeFileBinary.length / pageSize);
+    const numPages = Math.max(1, Math.floor(wholeFileBinary.length / pageSize));
 
     pageIndex.textContent = `Page ${Math.floor(newPos / pageSize) + 1} of ${numPages}. File size: ${wholeFileBinary.length}`;
 
@@ -288,6 +314,8 @@ function main() {
     blockTable.addEventListener('mouseleave', handleTableHover);
     backPageButton.addEventListener('click', (e) => movePage(-1));
     nextPageButton.addEventListener('click', (e) => movePage(1));
+    backTblButton.addEventListener('click', (e) => handleTableMove(-1));
+    nextTblButton.addEventListener('click', (e) => handleTableMove(1));
 
     // Check for Query Params
     if (location.search) {
