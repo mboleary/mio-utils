@@ -18,6 +18,9 @@ const enableGridInput = document.getElementById('enable_grid');
 const blockTable = document.getElementById('block_table');
 const posBlock = document.getElementById('pos_block');
 const posByte = document.getElementById('pos_byte');
+const backPageButton = document.getElementById('page_back');
+const nextPageButton = document.getElementById('page_next');
+const pageIndex = document.getElementById('page_index');
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
@@ -49,6 +52,7 @@ function processMioFile(uint8arr) {
     wholeFileBinary = uint8arr;
     readMioIntoCanvas(uint8arr);
     setTableValues(uint8arr.slice(0, 32), 4, 0, 32);
+    movePage(0);
 }
 
 async function loadMioFile(event) {
@@ -91,7 +95,7 @@ function setTableValues(mioPart, cols = 4, start, end) {
 
     // Set Title
     const title = document.createElement('caption');
-    title.textContent = `Hex data from 0x${start.toString(16)} (${start}) to 0x${end.toString(16)} (${end}): size ${mioPart.length} bytes`;
+    title.textContent = `Hex data from 0x${start.toString(16).padStart(4, '0')} (${start}) to 0x${end.toString(16).padStart(4, '0')} (${end}): size ${mioPart.length} bytes`;
 
     frag.appendChild(title);
 
@@ -108,7 +112,7 @@ function setTableValues(mioPart, cols = 4, start, end) {
         }
 
         const hexData = document.createElement('td');
-        hexData.textContent = mioPart[i].toString(16);
+        hexData.textContent = mioPart[i].toString(16).padStart(2, '0');
         hexData.setAttribute('index', i);
         hexData.setAttribute('data_type', "hex");
 
@@ -185,7 +189,45 @@ function handleCanvasHover(event) {
     const {col, row, offset} = _getBytesPositionFromCoords(event.offsetX, event.offsetY, canvasScale, numCols, begin);
 
     posBlock.textContent = `col: ${col}, row: ${row}`;
-    posByte.textContent = `start: 0x${offset.toString(16)} (${offset}), end: 0x${(offset + 32).toString(16)} (${offset + 32})`;
+    posByte.textContent = `start: 0x${offset.toString(16).padStart(4, '0')} (${offset}), end: 0x${(offset + 32).toString(16).padStart(4, '0')} (${offset + 32})`;
+}
+
+function movePage(amount) {
+    // each block is 4x8 bytes, with each 8 bytes being split into high and low values
+    const pageSize = (Number(bitmapWidthInput.value) / 2) * Number(bitmapHeightInput.value);
+    const curr = Number(binStartInput.value);
+
+    let newPos = curr + (pageSize * amount);
+
+    if (newPos > wholeFileBinary.length) {
+        newPos = wholeFileBinary.length - pageSize;
+    } else if (newPos < 0) {
+        newPos = 0;
+    }
+
+    binStartInput.value = newPos;
+
+    console.log("max",newPos, wholeFileBinary.length - pageSize);
+
+    if (newPos >= wholeFileBinary.length - pageSize) {
+        nextPageButton.setAttribute("disabled", "");
+    } else {
+        nextPageButton.removeAttribute("disabled");
+    }
+
+    if (newPos <= 0) {
+        backPageButton.setAttribute("disabled", "");
+    } else {
+        backPageButton.removeAttribute("disabled");
+    }
+
+    const numPages = Math.floor(wholeFileBinary.length / pageSize);
+
+    pageIndex.textContent = `Page ${Math.floor(newPos / pageSize) + 1} of ${numPages}. File size: ${wholeFileBinary.length}`;
+
+    if (amount) {
+        setTimeout(() => refreshCanvas());
+    }
 }
 
 async function parseQueryParams() {
@@ -244,6 +286,8 @@ function main() {
     canvas.addEventListener('mousemove', handleCanvasHover);
     blockTable.addEventListener('mouseover', handleTableHover);
     blockTable.addEventListener('mouseleave', handleTableHover);
+    backPageButton.addEventListener('click', (e) => movePage(-1));
+    nextPageButton.addEventListener('click', (e) => movePage(1));
 
     // Check for Query Params
     if (location.search) {

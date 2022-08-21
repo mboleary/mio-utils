@@ -90,8 +90,14 @@
         </div>
     </div>
     <div class="container">
-        <p>Position: <span id="pos_block"></span> Bytes: <span id="pos_byte"></span></p>
+        <div class="flex-layout horizontal">
+            <button type="button" disabled id="page_back" class="tertiary accent-2">&lt; Page Back</button>
+            <span id="page_index" class="flex"></span>
+            <button type="button" disabled id="page_next" class="tertiary accent-2">Page Next &gt;</button>
+        </div>
+        <div class="height-10"></div>
         <canvas id="canvas" width="1024" height="1024"></canvas>
+        <p>Position(<span id="pos_block"></span>) Bytes(<span id="pos_byte"></span>)</p>
     </div>
     <hr>
     <div class="container">
